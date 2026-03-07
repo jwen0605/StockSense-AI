@@ -47,6 +47,7 @@ clear. Avoid giving explicit financial advice.
             {"role": "user", "content": prompt}
         ],
         max_tokens=300,
-        temperature=0.7
+        temperature=0.7,
+        timeout=10  # Add timeout to prevent hanging
     )
     return response.choices[0].message["content"].strip()

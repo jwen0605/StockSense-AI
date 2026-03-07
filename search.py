@@ -16,7 +16,7 @@ def google_search(query):
         'Content-Type': 'application/json'
     }
 
-    response = requests.request("POST", url, headers=headers, data=payload)
+    response = requests.request("POST", url, headers=headers, data=payload, timeout=10)
     # Simplify results, return only top 3 organic search snippets to AI
     search_results = response.json()
     snippets = [item.get('snippet', '') for item in search_results.get('organic', [])[:3]]

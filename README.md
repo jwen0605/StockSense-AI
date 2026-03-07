@@ -2,52 +2,67 @@
 
 ## About StockSense AI
 
-StockSense AI is an intelligent stock analysis assistant that combines real-time web search with historical market data analysis. By leveraging AI tool-calling capabilities, it provides comprehensive stock insights including current prices, performance metrics, and investment recommendations.
+StockSense AI is an intelligent stock analysis web application that combines real-time web search with historical market data analysis. It provides comprehensive stock insights including current prices, performance metrics, and AI-powered summaries.
+
+The application features a modern web interface built with Flask and Bootstrap, allowing users to query stock information seamlessly.
 
 ## Features
 
-- Simulate AI receiving user queries
-- Call Google search API to get real-time information
-- Analyze stock performance over past 12 months
-- Provide investment recommendations based on historical data
-- Return search result summaries with analysis
+- **Real-time Search**: Fetches latest stock prices and news using Google Search API
+- **Historical Analysis**: Analyzes stock performance over the past 12 months using Yahoo Finance data
+- **AI Summaries**: Optional OpenAI-powered natural language summaries (requires API key)
+- **Responsive Web UI**: Clean, modern interface with loading indicators and error handling
+- **Command-line Demo**: Standalone script for testing functionality
 
 ## Setup
 
-1. Get Serper API Key: Sign up at [Serper.dev](https://serper.dev) and get an API Key.
+1. **Get API Keys**:
+   - Serper API Key: Sign up at [Serper.dev](https://serper.dev) for Google search access
+   - (Optional) OpenAI API Key: For AI summaries at [OpenAI](https://platform.openai.com)
 
-2. Create `.env` file: Create a `.env` file in the project root and add your API Key:
+2. **Create `.env` file** in the project root:
    ```
-   SERPER_API_KEY=your_actual_api_key_here
+   SERPER_API_KEY=your_serper_api_key_here
+   OPENAI_API_KEY=your_openai_api_key_here  # Optional
    ```
-   **Note**: Replace `your_actual_api_key_here` with your real API Key.
 
-3. Install dependencies:
+3. **Install dependencies**:
    ```bash
-   pip3 install requests python-dotenv yfinance
-   # if you want AI summarization add an LLM client
-   pip3 install openai
-   ```
-
-4. (Optional) To run the web front‑end you also need Flask:
-   ```bash
-   pip3 install flask
+   pip3 install requests python-dotenv yfinance flask openai
    ```
 
 ## Run
 
-You can execute the command‑line demo:
-
+### Web Application
 ```bash
-cd "StockSense AI"
+python3 app.py
+```
+The app will start on `http://localhost:5003` (or next available port). Open in your browser to use the web interface.
+
+### Command-line Demo
+```bash
 python3 demo.py
 ```
+Runs a simulation of the AI tool-calling process for a sample query.
 
-**LLM integration**
+## Usage
 
-If you have set `OPENAI_API_KEY` the demo and web interface will also
-ask the model to produce a natural‑language summary of the search results
-and analysis. The summary appears under "AI Summary" in the web UI.
+- Enter a stock ticker (e.g., AAPL) or company name (e.g., Apple) in the search box
+- The app will display search results, historical analysis, and AI summary
+- Analysis includes price changes, volatility, and buy/hold/sell recommendations
+
+## Architecture
+
+- **Backend**: Flask web server with REST API endpoints
+- **Frontend**: HTML/CSS/JavaScript with Bootstrap 5
+- **APIs**: Serper for search, Yahoo Finance for data, OpenAI for summaries
+- **Deployment**: Runs locally with debug mode enabled
+
+## Notes
+
+- Financial data is for informational purposes only
+- Consult a financial advisor before making investment decisions
+- API rate limits apply to search and AI services
 
 Example environment file additions:
 
