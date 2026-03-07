@@ -14,6 +14,11 @@ The application features a modern web interface built with Flask and Bootstrap, 
 - **Responsive Web UI**: Clean, modern interface with loading indicators and error handling
 - **Command-line Demo**: Standalone script for testing functionality
 
+## Demo
+<p align="center">
+  <img src="Demo.png" alt="Header Image" />
+</p>
+
 ## Setup
 
 1. **Get API Keys**:
