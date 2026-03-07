@@ -104,4 +104,4 @@ Note: This is not financial advice. Please consult a financial advisor.
 
 - `search.py`: Contains the Google search function
 - `tool_schema.json`: JSON schema definition for the tool
-- `demo.py`: Main program simulating AI tool calls
+- `demo.py`: Main program simulating AI tool calls# StockSense-AI
