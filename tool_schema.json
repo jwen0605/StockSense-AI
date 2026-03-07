@@ -1,0 +1,15 @@
+{
+    "name": "google_search",
+    "description": "Use this tool when users ask for real-time information, news, stock prices, weather, or any latest facts that you don't know.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "The query to send to Google search, e.g., 'NVIDIA stock price today'"
+            }
+        },
+        "required": ["query"],
+        "additionalProperties": false
+    }
+}
