@@ -34,8 +34,8 @@ def get_stock_history(ticker, months=12):
         return None
 
     return {
-        'current_price': hist['Close'].iloc[-1] if not hist.empty else None,
-        'start_price': hist['Close'].iloc[0] if not hist.empty else None,
+        'current_price': hist['Close'].iloc[-1],
+        'start_price': hist['Close'].iloc[0],
         'history': hist
     }
 
